@@ -996,6 +996,20 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Pirate Bomb Pack/Objects/Health Bar/3e4dd6fb7044eed7b3e433effc095037cbe58eb5e2a34d6280d969fbeacf8612_Heart.png",
           "name": "Heart.png"
         }
+      },
+      {
+        "file": "assets/Blip 5.aac",
+        "kind": "audio",
+        "metadata": "",
+        "name": "fb0e80da9c23137d473428813fa38876484cc614fe0030a583e449fa4b237769_Blip 5.aac",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Arcade/Sound effects/Blip/fb0e80da9c23137d473428813fa38876484cc614fe0030a583e449fa4b237769_Blip 5.aac",
+          "name": "gdevelop-asset-store"
+        }
       }
     ],
     "resourceFolders": []
@@ -1033,7 +1047,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.6789100437066731,
+        "zoomFactor": 0.7254681471466966,
         "windowMask": false
       },
       "objectsGroups": [
@@ -1172,9 +1186,9 @@
           "updateIfNotVisible": false,
           "variables": [
             {
-              "name": "dead",
-              "type": "boolean",
-              "value": false
+              "name": "health",
+              "type": "number",
+              "value": 3
             }
           ],
           "effects": [],
@@ -3048,24 +3062,36 @@
                     },
                     {
                       "type": {
-                        "value": "SetNumberVariable"
-                      },
-                      "parameters": [
-                        "Score",
-                        "+",
-                        "100"
-                      ]
-                    },
-                    {
-                      "type": {
                         "value": "PlaySound"
                       },
                       "parameters": [
                         "",
-                        "coin.mp3",
+                        "fb0e80da9c23137d473428813fa38876484cc614fe0030a583e449fa4b237769_Blip 5.aac",
                         "",
-                        "50",
+                        "35",
                         ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberObjectVariable"
+                      },
+                      "parameters": [
+                        "Player",
+                        "health",
+                        "+",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberObjectVariable"
+                      },
+                      "parameters": [
+                        "PixelHeartBar",
+                        "healthAmount",
+                        "=",
+                        "Player.Variable(health)"
                       ]
                     }
                   ]
