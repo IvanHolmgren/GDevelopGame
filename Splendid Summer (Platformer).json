@@ -1010,6 +1010,32 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Arcade/Sound effects/Blip/fb0e80da9c23137d473428813fa38876484cc614fe0030a583e449fa4b237769_Blip 5.aac",
           "name": "gdevelop-asset-store"
         }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Bandage_No Shadow2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Bandage_No Shadow.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/32x32 Fantasy Icons Pack v2/Icons/Healing Items/3c56043f009d31caba884ea39bbc870b7a83b1334778e69337da79f432f2700b_Bandage_No Shadow.png",
+          "name": "Bandage_No Shadow.png"
+        }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Bandage_Shadow2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Bandage_Shadow.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/32x32 Fantasy Icons Pack v2/Icons/Healing Items/a41140a80df4430dcd761cfe74d309171d49af0eb17a0b83c179352bf41533cb_Bandage_Shadow.png",
+          "name": "Bandage_Shadow.png"
+        }
       }
     ],
     "resourceFolders": []
@@ -1162,16 +1188,50 @@
         {
           "angle": 0,
           "customSize": true,
-          "depth": 2,
-          "height": 33,
+          "depth": 1,
+          "height": 157,
           "keepRatio": true,
           "layer": "",
-          "name": "Heart",
-          "persistentUuid": "f7fa8c9c-d19f-4f67-904e-5fbe130d852a",
-          "width": 38,
-          "x": 491,
-          "y": 427,
-          "zOrder": 65,
+          "name": "SmallPlatform",
+          "persistentUuid": "3a5e95ac-8f6f-4fae-9406-58dd62046ef2",
+          "width": 199,
+          "x": 788,
+          "y": 387,
+          "zOrder": 66,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 54,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Bandage",
+          "persistentUuid": "7d785630-570b-4266-8425-792c3049dec2",
+          "width": 57,
+          "x": 810,
+          "y": 329,
+          "zOrder": 67,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 54,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Bandage",
+          "persistentUuid": "125a848c-10f8-4d59-b91c-a82f2140d807",
+          "width": 57,
+          "x": 519,
+          "y": 414,
+          "zOrder": 67,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -2762,7 +2822,15 @@
           "updateIfNotVisible": false,
           "variables": [],
           "effects": [],
-          "behaviors": [],
+          "behaviors": [
+            {
+              "canBeGrabbed": true,
+              "name": "Platform",
+              "platformType": "NormalPlatform",
+              "type": "PlatformBehavior::PlatformBehavior",
+              "yGrabOffset": 0
+            }
+          ],
           "animations": [
             {
               "name": "",
@@ -2936,6 +3004,114 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "60877a47fad9f4c9a1d065bddc45642b2e4e8591d7920fabc1dd6308e053b60b",
+          "name": "Bandage",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "No Shadow",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.025,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Bandage_No Shadow.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 4,
+                            "y": 3
+                          },
+                          {
+                            "x": 29,
+                            "y": 3
+                          },
+                          {
+                            "x": 29,
+                            "y": 29
+                          },
+                          {
+                            "x": 4,
+                            "y": 29
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Shadow",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.025,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Bandage_Shadow.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 4,
+                            "y": 3
+                          },
+                          {
+                            "x": 29,
+                            "y": 3
+                          },
+                          {
+                            "x": 29,
+                            "y": 29
+                          },
+                          {
+                            "x": 4,
+                            "y": 29
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -2966,6 +3142,9 @@
           },
           {
             "objectName": "Heart"
+          },
+          {
+            "objectName": "Bandage"
           }
         ]
       },
@@ -3043,7 +3222,7 @@
                       },
                       "parameters": [
                         "Player",
-                        "Heart",
+                        "Bandage",
                         "",
                         "",
                         ""
@@ -3056,7 +3235,7 @@
                         "value": "Delete"
                       },
                       "parameters": [
-                        "Heart",
+                        "Bandage",
                         ""
                       ]
                     },
@@ -3085,12 +3264,12 @@
                     },
                     {
                       "type": {
-                        "value": "SetNumberObjectVariable"
+                        "value": "TiledUnitsBar::TiledUnitsBar::SetValue"
                       },
                       "parameters": [
                         "PixelHeartBar",
-                        "healthAmount",
                         "=",
+                        "Player.Variable(health)",
                         "Player.Variable(health)"
                       ]
                     }
